@@ -1,7 +1,7 @@
 package com.java.version.eight.custom.functional.interfaces;
 
 @FunctionalInterface
-public interface CustomCalculateFunctionalInterface {
+public interface CalculateInterface {
 
     int calculate(int a, int  b);
 

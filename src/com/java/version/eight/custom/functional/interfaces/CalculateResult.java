@@ -6,11 +6,11 @@ public class  CalculateResult{
 
 
         //Lambda expression implementation
-        CustomCalculateFunctionalInterface add = (a,b) -> a+b;
+        CalculateInterface add = (a,b) -> a+b;
 
-        CustomCalculateFunctionalInterface subtract = (a,b) -> a-b;
+        CalculateInterface subtract = (a,b) -> a-b;
 
-        CustomCalculateFunctionalInterface multiply = (a,b) -> a*b;
+        CalculateInterface multiply = (a,b) -> a*b;
 
         System.out.println(add.calculate(10,5));
         System.out.println(subtract.calculate(10,5));
