@@ -1,11 +1,15 @@
 package com.java.basic.design;
 
-public class DoubleLockingSingleton {
+import java.io.Serializable;
+
+public class DoubleLockingSingleton implements Serializable,Cloneable {
 
     private static DoubleLockingSingleton instance;
 
     private DoubleLockingSingleton(){
-
+            if(instance!=null){ //protects from Reflection
+                throw new IllegalArgumentException("Singleton object already created");
+            }
     }
 
     public static DoubleLockingSingleton getInstance(){
@@ -20,7 +24,11 @@ public class DoubleLockingSingleton {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException{
-        return null;
+    protected Object clone() throws CloneNotSupportedException{//prevents clonning
+         throw new CloneNotSupportedException("Singleton clone not supported");
+    }
+
+    public Object readSolve(){
+        return instance;
     }
 }
